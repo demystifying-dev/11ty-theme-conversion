@@ -128,3 +128,7 @@ In the introductory [Eleventy (11ty) Static HTML Theme Conversion Introduction](
   and copy the page files into it (index, about, etc.)
 - Now everything is running since we left eleventy running in serve mode
   and it detected and acted upon the file changes
+- Pointing our browser at http://localhost:8080/,
+  we can visualize our homepage just fine
+- See commit [feat(eleventy): Set up and configure eleventy](https://github.com/demystifying-dev/11ty-theme-conversion/commit/9aa30636a8ee4044d7b39b19f4f63dba09680a72)
+- We make another [commit so as not to track the output dir](https://github.com/demystifying-dev/11ty-theme-conversion/commits/master)
