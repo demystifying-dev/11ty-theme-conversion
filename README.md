@@ -7,6 +7,7 @@ Building on Bryan Robinson's Eleventy theme construction tutorial
     - [Original](#original)
     - [Revisited](#revisited)
   - [Configuration](#configuration)
+  - [Test initial setup](#test-initial-setup)
 
 A step-by-step, pedagogically documented journey building upon Bryan Robinson's excellent May, 2019 Video Tutorial [Create an Eleventy (11ty) theme based on a free HTML template](https://bryanlrobinson.com/blog/create-11ty-theme-from-static-html-template/) as a starting point.
 
@@ -84,3 +85,46 @@ In the introductory [Eleventy (11ty) Static HTML Theme Conversion Introduction](
 - Install 11ty as per [Getting Started docs](https://www.11ty.dev/docs/getting-started/)
   - Initialize the project with the Node package manager `npm init -y`
   - Install `eleventy` locally `npm install --save-dev @11ty/eleventy`
+  - Confirm version with `npx @11ty/eleventy --version` (`0.11.0` at time of writing)
+- Eleventy configuration
+  - See https://www.11ty.dev/docs/config/
+  - Our file `.eleventy.js`
+    ```javascript
+    module.exports = function (eleventyConfig) {
+      // See https://www.11ty.dev/docs/config/
+      eleventyConfig.addPassthroughCopy("assets");
+      // You can return your Config object (optional).
+      return {
+        passthroughFileCopy: true,
+        dir: {
+          input: "src",
+          output: "_site",
+          include: "includes",
+        },
+      };
+    };
+    ```
+
+## Test initial setup
+
+- Run eleventy: `npx eleventy --serve`
+  ```bash
+  % npx eleventy --serve
+  Copied 143 files / Wrote 0 files in 1.27 seconds (v0.11.0)
+  Watching…
+  [Browsersync] Access URLs:
+   --------------------------------------
+         Local: http://localhost:8080
+      External: http://192.168.0.221:8080
+   --------------------------------------
+            UI: http://localhost:3001
+   UI External: http://localhost:3001
+   --------------------------------------
+  [Browsersync] Serving files from: _site
+  ```
+- Only `./assets` got copied into the output directory
+  because we don't have oour source directory set up yet.
+  To do that we create a `./src` directory
+  and copy the page files into it (index, about, etc.)
+- Now everything is running since we left eleventy running in serve mode
+  and it detected and acted upon the file changes
