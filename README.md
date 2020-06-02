@@ -1,5 +1,7 @@
 # 11ty Theme Conversion
 
+Building on Bryan Robinson's Eleventy theme construction tutorial
+
 - [11ty Theme Conversion](#11ty-theme-conversion)
   - [The plan](#the-plan)
     - [Original](#original)
@@ -11,7 +13,7 @@ A step-by-step, pedagogically documented journey building upon Bryan Robinson's 
 However, we will be adding an essential missing ingredient to the mix, one that Bryan Robinson mentions himself in [Three JAMstack movements to watch in 2020](https://bryanlrobinson.com/blog/three-jamstack-concepts-to-watch-in-2020/):
 
 > ### A DIY movement reinvigorated
-> 
+>
 > The JAMstack is a great place to be a DIYer. Building things yourself is a path to great satisfaction. With little-to-no cost to build and host small applications, the JAMstack is really a no-brainer for a DIY or Indie movement.
 
 ## The plan
@@ -66,13 +68,19 @@ In the introductory [Eleventy (11ty) Static HTML Theme Conversion Introduction](
 - The theme
   - [Flat Theme Lite - Free Responsive Multipurpose Site Template](https://themehunt.com/item/1524965-flat-theme-lite-free-responsive-multipurpose-site-template)
     - [Live preview](http://themehunt.com/item/1524965-flat-theme-lite-free-responsive-multipurpose-site-template/preview)
-  - copy over `./assets`
-    - TODO sass and a watcher to modify base theme assets
-  - copy over additional files as per planned structure
-    - homepage: `index2.html`
-    - services section: `service.html`
-    - about page: `about.html`
-    - testimonials page: `testimonial.html`
-    - contact page: `contact.html`
-
-  
+  - copy over initial theme files
+    - copy over `./assets`
+      - TODO sass and a watcher to modify base theme assets
+    - copy over additional files as per planned structure
+      - homepage: `index2.html`
+      - services section: `service.html`
+      - about page: `about.html`
+      - testimonials page: `testimonial.html`
+      - contact page: `contact.html`
+      - 404 page: `404.html`
+    - `index2.html` => `index.html
+    - view in browser as static file and it works with the pages we have,
+      including carousel on testimonials page
+- Install 11ty as per [Getting Started docs](https://www.11ty.dev/docs/getting-started/)
+  - Initialize the project with the Node package manager `npm init -y`
+  - Install `eleventy` locally `npm install --save-dev @11ty/eleventy`

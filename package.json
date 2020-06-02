@@ -1,0 +1,23 @@
+{
+  "name": "11ty-theme-conversion",
+  "version": "1.0.0",
+  "description": "Building on Bryan Robinson's Eleventy theme construction tutorial",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/demystifying-dev/11ty-theme-conversion.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/demystifying-dev/11ty-theme-conversion/issues"
+  },
+  "homepage": "https://github.com/demystifying-dev/11ty-theme-conversion#readme",
+  "devDependencies": {
+    "@11ty/eleventy": "^0.11.0"
+  }
+}
