@@ -131,4 +131,4 @@ In the introductory [Eleventy (11ty) Static HTML Theme Conversion Introduction](
 - Pointing our browser at http://localhost:8080/,
   we can visualize our homepage just fine
 - See commit [feat(eleventy): Set up and configure eleventy](https://github.com/demystifying-dev/11ty-theme-conversion/commit/9aa30636a8ee4044d7b39b19f4f63dba09680a72)
-- We make another [commit so as not to track the output dir](https://github.com/demystifying-dev/11ty-theme-conversion/commits/master)
+- We make another [commit so as not to track the output dir](https://github.com/demystifying-dev/11ty-theme-conversion/commit/f7ad75ee64f5eb809ffd56b3a9cfab080e9221b1)
