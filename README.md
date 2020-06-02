@@ -108,7 +108,7 @@ In the introductory [Eleventy (11ty) Static HTML Theme Conversion Introduction](
         dir: {
           input: "src",
           output: "_site",
-          include: "includes",
+          includes: "includes",
         },
       };
     };
@@ -143,6 +143,23 @@ In the introductory [Eleventy (11ty) Static HTML Theme Conversion Introduction](
 - We make another [commit so as not to track the output dir](https://github.com/demystifying-dev/11ty-theme-conversion/commit/f7ad75ee64f5eb809ffd56b3a9cfab080e9221b1)
 
 ## Base Template
+
+- We are going to create a layout template that every page will inherit from
+  > You're going to want to abstract out any values  
+  > that are going to be global to each page ([Original tutorial video](https://youtu.be/iWivBpYmOaQ))
+- The base template is to be found at `./src/includes/base.njk`
+- We'll start with `about.html`
+  - We cut the top part of the file all the way down to and including the header
+  - We cut the bottom part of the file all the way up to the start of the footer
+  - We paste both the top and bottom parts into `base.njk`, leaving a space in between
+  - Edit `src` file references to be relative to the root path instead of a subdir
+    Example:
+    From: `<script src="assets/js/jquery-2.2.4.min.js"></script>`
+    To: `<script src="/assets/js/jquery-2.2.4.min.js"></script>`
+  - Add passthrough info and expected formats to eleventy config file
+  - Have `about` invoke the base template `base.njk`
+  - Specify in our base template an area where content will be included
+    in the space we left between the header and the footer
 
 ## Reusable Content Template
 

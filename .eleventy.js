@@ -6,10 +6,12 @@ module.exports = function (eleventyConfig) {
   // You can return your Config object (optional).
   return {
     passthroughFileCopy: true,
+    markdownTemplateEngine: "njk",
+    templateFormats: ["html", "njk", "md"],
     dir: {
       input: "src",
       output: "_site",
-      include: "includes",
+      includes: "includes",
     },
   };
 };
