@@ -4,6 +4,7 @@
   - [The plan](#the-plan)
     - [Original](#original)
     - [Revisited](#revisited)
+  - [Configuration](#configuration)
 
 A step-by-step, pedagogically documented journey building upon Bryan Robinson's excellent May, 2019 Video Tutorial [Create an Eleventy (11ty) theme based on a free HTML template](https://bryanlrobinson.com/blog/create-11ty-theme-from-static-html-template/) as a starting point.
 
@@ -59,3 +60,19 @@ In the introductory [Eleventy (11ty) Static HTML Theme Conversion Introduction](
   - Set up editorial workflow for content managers
   - Editing comes with instant preview
     plus buttons for staging and for publishing
+
+## Configuration
+
+- The theme
+  - [Flat Theme Lite - Free Responsive Multipurpose Site Template](https://themehunt.com/item/1524965-flat-theme-lite-free-responsive-multipurpose-site-template)
+    - [Live preview](http://themehunt.com/item/1524965-flat-theme-lite-free-responsive-multipurpose-site-template/preview)
+  - copy over `./assets`
+    - TODO sass and a watcher to modify base theme assets
+  - copy over additional files as per planned structure
+    - homepage: `index2.html`
+    - services section: `service.html`
+    - about page: `about.html`
+    - testimonials page: `testimonial.html`
+    - contact page: `contact.html`
+
+  
