@@ -159,7 +159,24 @@ In the introductory [Eleventy (11ty) Static HTML Theme Conversion Introduction](
   - Add passthrough info and expected formats to eleventy config file
   - Have `about` invoke the base template `base.njk`
   - Specify in our base template an area where content will be included
-    in the space we left between the header and the footer
+    in the space we left between the header and the footer, with
+    `{{ content | safe }}`, following the `{{ variable | filter }}` mode explained [in the docs](https://www.11ty.dev/docs/languages/nunjucks/#filters)
+  - Test so far by manually directing our browser at http://localhost:8080/about/.
+  - Commit [feat(base template): Base template, first version](https://github.com/demystifying-dev/11ty-theme-conversion/commit/065a69e7cdc194db2566d38517cfa5238e34033d)
+- We re-use our new inheritable base template now for the remaining pages: contact, index, service and testimonial For each page, we
+  - Remove header and footer
+  - Add form matter to the top
+    ```yaml
+    ---
+    layout: "base.njk"
+    ---
+
+    ```
+  - Make sure `src` and `href` links take the path from site document root. Example:
+    From: `<script src="assets/js/jquery-2.2.4.min.js"></script>`
+    To: `<script src="/assets/js/jquery-2.2.4.min.js"></script>`
+- Each page works if we go there directly... But if we go to the home page, the navigation to `About`, for example
+  doesn't work (link is http://localhost:8080/about.html) and we get an error: `Cannot GET /about.html`.
 
 ## Reusable Content Template
 
