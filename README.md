@@ -175,8 +175,12 @@ In the introductory [Eleventy (11ty) Static HTML Theme Conversion Introduction](
   - Make sure `src` and `href` links take the path from site document root. Example:
     From: `<script src="assets/js/jquery-2.2.4.min.js"></script>`
     To: `<script src="/assets/js/jquery-2.2.4.min.js"></script>`
-- Each page works if we go there directly... But if we go to the home page, the navigation to `About`, for example
+- Each page works if we invoke them directly (as in `http://localhost:8080/testimonial/`).
+  But if we go to the home page, the navigation to `About`, for example,
   doesn't work (link is http://localhost:8080/about.html) and we get an error: `Cannot GET /about.html`.
+- Edit the base template and
+  - Remove links we're not using
+  - Correct links by making them relative to root and without the `.html` extension
 
 ## Reusable Content Template
 
