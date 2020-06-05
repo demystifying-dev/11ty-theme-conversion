@@ -182,6 +182,7 @@ In the introductory [Eleventy (11ty) Static HTML Theme Conversion Introduction](
   - Remove links we're not using
   - Correct links by making them relative to root and without the `.html` extension
 - Comment out search form. TODO implement search functionality.
+- Parameterize title content for each page in base template
 
 ## Reusable Content Template
 
