@@ -186,6 +186,8 @@ In the introductory [Eleventy (11ty) Static HTML Theme Conversion Introduction](
 
 ## Reusable Content Template
 
+
+
 ## Collections
 
 ## Custom Homepage

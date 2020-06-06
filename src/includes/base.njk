@@ -69,7 +69,9 @@
     </div>
 </div> 
 
-  {{ content | safe }}
+{% block content %}
+    {{ content | safe }}
+{% endblock content %}
 
     <footer>
     <div class="footer-top">
