@@ -188,6 +188,8 @@ In the introductory [Eleventy (11ty) Static HTML Theme Conversion Introduction](
 
 Initial `layouts/simple` extends `base` and is applied to about page in commit [feat(content template): initial content template applied to about page](https://github.com/demystifying-dev/11ty-theme-conversion/commit/063325903403b6ad5fb4936aedc30bd10c4687cd)
 
+About page now sourced in markdown in following [commit](https://github.com/demystifying-dev/11ty-theme-conversion/commit/ae9de4001fb16e21eb9c1a7bc22103f0edcdb0f5)
+
 ## Collections
 
 ## Custom Homepage
