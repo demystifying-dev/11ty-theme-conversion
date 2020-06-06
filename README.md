@@ -186,7 +186,7 @@ In the introductory [Eleventy (11ty) Static HTML Theme Conversion Introduction](
 
 ## Reusable Content Template
 
-
+Initial `layouts/simple` extends `base` and is applied to about page in commit [feat(content template): initial content template applied to about page](https://github.com/demystifying-dev/11ty-theme-conversion/commit/063325903403b6ad5fb4936aedc30bd10c4687cd)
 
 ## Collections
 
