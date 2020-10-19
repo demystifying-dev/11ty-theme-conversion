@@ -9,7 +9,7 @@ Building on Bryan Robinson's Eleventy theme construction tutorial
   - [Configuration](#configuration)
   - [Test initial setup](#test-initial-setup)
   - [Base Template](#base-template)
-  - [Reusable Content Template](#reusable-content-template)
+  - [Reusable Content Template extends base template](#reusable-content-template-extends-base-template)
   - [Collections](#collections)
   - [Custom Homepage](#custom-homepage)
   - [Deployment](#deployment)
@@ -18,6 +18,8 @@ Building on Bryan Robinson's Eleventy theme construction tutorial
   - [Automation](#automation)
 
 A step-by-step, pedagogically documented journey building upon Bryan Robinson's excellent May, 2019 Video Tutorial [Create an Eleventy (11ty) theme based on a free HTML template](https://bryanlrobinson.com/blog/create-11ty-theme-from-static-html-template/) as a starting point.
+
+The completed site is apparently to be found in the author's [repo brob / clientsite.com](https://github.com/brob/clientsite.com/tree/renovate/configure/src)
 
 However, we will be adding an essential missing ingredient to the mix, one that Bryan Robinson mentions himself in [Three JAMstack movements to watch in 2020](https://bryanlrobinson.com/blog/three-jamstack-concepts-to-watch-in-2020/):
 
@@ -81,6 +83,8 @@ In the introductory [Eleventy (11ty) Static HTML Theme Conversion Introduction](
   - copy over initial theme files
     - copy over `./assets`
       - TODO sass and a watcher to modify base theme assets
+      - Eleventy can be its own watcher, as per Stephanie Eckles' [Build An Eleventy (11ty) Site From Scratch Collection](https://egghead.io/playlists/build-an-eleventy-11ty-site-from-scratch-bfd3)
+        - [Local repo Learn / 5t3ph-11ty-from-scratch](http://gitea.noraperusin/Learn/5t3ph-11ty-from-scratch)
     - copy over additional files as per planned structure
       - homepage: `index2.html`
       - services section: `service.html`
@@ -91,6 +95,7 @@ In the introductory [Eleventy (11ty) Static HTML Theme Conversion Introduction](
     - `index2.html` => `index.html
     - view in browser as static file and it works with the pages we have,
       including carousel on testimonials page
+    - Commit [chore(homepage):copied over initial files from theme and normalized homepage source name from index2 to index](https://github.com/demystifying-dev/11ty-theme-conversion/commit/9d2ec33364a70df95c592fbf7ef53a8640c10ca6) - Static site actually running.
 - Install 11ty as per [Getting Started docs](https://www.11ty.dev/docs/getting-started/)
   - Initialize the project with the Node package manager `npm init -y`
   - Install `eleventy` locally `npm install --save-dev @11ty/eleventy`
@@ -175,18 +180,22 @@ In the introductory [Eleventy (11ty) Static HTML Theme Conversion Introduction](
   - Make sure `src` and `href` links take the path from site document root. Example:
     From: `<script src="assets/js/jquery-2.2.4.min.js"></script>`
     To: `<script src="/assets/js/jquery-2.2.4.min.js"></script>`
+- Commit [(base template): Extend base content template over all pages](https://github.com/demystifying-dev/11ty-theme-conversion/commit/a2aeb78753209fd2f942de6fb66c6d2beeed6e20)
 - Each page works if we invoke them directly (as in `http://localhost:8080/testimonial/`).
   But if we go to the home page, the navigation to `About`, for example,
   doesn't work (link is http://localhost:8080/about.html) and we get an error: `Cannot GET /about.html`.
 - Edit the base template and
   - Remove links we're not using
   - Correct links by making them relative to root and without the `.html` extension
+  - Commit [feat(navbar): Remove navigation menu links we're not using and make all links relative to root site directory and without any .html extension](https://github.com/demystifying-dev/11ty-theme-conversion/commit/72b5c0cd64a04fd8f073a6e8391108c1a9242907)
 - Comment out search form. TODO implement search functionality.
+  - Commit [chore: Comment out search form. TODO implement search functionality.](https://github.com/demystifying-dev/11ty-theme-conversion/commit/43e1f75030ef101b58de2b43fd14bda139c4e4e0)
 - Parameterize title content for each page in base template
+  - Commit [Parameterize title, description and background image content for each page in base template](https://github.com/demystifying-dev/11ty-theme-conversion/commit/9c7c83101cdbfc7a787809cc89436d383602b2db)
 
-## Reusable Content Template
+## Reusable Content Template extends base template
 
-Initial `layouts/simple` extends `base` and is applied to about page in commit [feat(content template): initial content template applied to about page](https://github.com/demystifying-dev/11ty-theme-conversion/commit/063325903403b6ad5fb4936aedc30bd10c4687cd)
+Initial `layouts/simple` extends `base` and is applied to about page in commit [feat(content template): initial content template applied to about page](https://github.com/demystifying-dev/11ty-theme-conversion/commit/063325903403b6ad5fb4936aedc30bd10c4687cd), and will be reused with other similar pages, for example, individual services pages from the services collection (content type, see Collections, below).
 
 About page now sourced in markdown in following [commit](https://github.com/demystifying-dev/11ty-theme-conversion/commit/ae9de4001fb16e21eb9c1a7bc22103f0edcdb0f5)
 
@@ -199,5 +208,7 @@ About page now sourced in markdown in following [commit](https://github.com/demy
 ## API Based Contact Page
 
 ## CMS
+
+See [Eleventy (11ty) Static Sites Part 3: Using NetlifyCMS](https://www.youtube.com/watch?v=dS4IWTITNQM&t=66s)
 
 ## Automation
